@@ -6,6 +6,7 @@ the minimal (example with five wizard steps) code and configuration to help you 
 * navigation (forward, backwarde, cancel and finish)
 * usage of JSP 2.0 tags to build up the wizard (keeps your pages clean)
 * support for internationalisation (i8n) integrated
+* form validation
 * SiteMesh decorator integrated for consistent decoration on all your pages
 * friendly exception handling when something goes wrong in the wizard
 
