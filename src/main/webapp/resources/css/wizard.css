@@ -1,0 +1,95 @@
+.navigatorButtons {
+	text-align: right;
+	position: relative;
+	bottom: -22px;
+	position:absolute;
+    width: 100%;
+}
+
+.navigatorButtons a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.navigatorButtons span {
+    width: 20px;
+    height: 14px;
+    background: rgba(29, 156, 255, 0.96);
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.wizardContent {
+	text-align: left;
+    border: 1px solid #dedede;
+    width: 60%;
+    margin:0 auto;
+	height: auto;
+	position:relative;
+}
+
+.breadcrumb {
+    text-align: center;
+    margin:0 auto 5px;
+    width: 60%;
+}
+
+ul, li {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+.breadcrumbtrail {
+    border: 1px solid #dedede;
+    height: 2.3em;
+}
+
+.breadcrumbtrail li {
+    float: left;
+    line-height:2.3em;
+    padding-left:.75em;
+    color: #777;
+}
+
+.breadcrumbtrail li a {
+    display:block;
+    color: #000000;
+    text-decoration: none;
+    padding:0 15px 0 0;
+    background:url(../images/crumbs.gif) no-repeat right center;
+}
+
+
+.breadcrumbtrail li a.active {
+    color: #ff0000;
+    background:url(../images/crumbs_active.gif) no-repeat right center;
+}
+
+.validationError {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CD0A0A;
+    background-color: #fdf3ee;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.validationError li {
+    margin-left: 1em;
+    list-style-type: disc;
+}
+
+.validationErrorField {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CD0A0A;
+    background-color: #fdf3ee;
+}
+

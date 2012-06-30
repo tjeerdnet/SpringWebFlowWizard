@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <var name="person" class="net.tjeerd.springwebflowwizard.model.Person"/>
+    <var name="exception" class="java.lang.Exception"/>
+
+    <view-state id="step1" view="views/step1.jsp" model="person">
+        <attribute name="description" value="First step"/>
+        <transition on="submitNext" to="step2" bind="true" validate="true" />
+    </view-state>
+
+    <view-state id="step2" view="views/step2.jsp" model="person">
+       <attribute name="description" value="Second step"/>
+        <transition on="submitNext" to="step3" bind="true" validate="true"/>
+        <transition on="submitPrevious" to="step1" />
+    </view-state>
+
+    <view-state id="step3" view="views/step3.jsp" model="person">
+        <attribute name="description" value="Third step"/>
+        <transition on="submitNext" to="step4" bind="true" validate="true"/>
+        <transition on="submitPrevious" to="step2" />
+    </view-state>
+
+    <view-state id="step4" view="views/step4.jsp" model="person">
+        <attribute name="description" value="Fourth step"/>
+        <transition on="submitNext" to="reversePlace" bind="true"/>
+        <transition on="submitPrevious" to="step3" bind="false"/>
+    </view-state>
+
+    <action-state id="reversePlace">
+        <set name="person" value="wizardFlowActions.reversePlace(person)"/>
+        <transition to="step5"/>
+    </action-state>
+
+    <view-state id="step5" view="views/step5.jsp" model="person">
+        <attribute name="description" value="Fifth step"/>
+        <transition on="submitNext" to="finished" bind="true" validate="true">
+            <evaluate expression="wizardFlowActions.handlePerson(person)"/>
+        </transition>
+        <transition on="submitPrevious" to="step4" />
+    </view-state>
+
+    <end-state id="finished" view="views/finished.jsp"/>
+    <end-state id="cancel" view="views/cancel.jsp"/>
+    <end-state id="exception" view="views/exception.jsp"/>
+
+    <global-transitions>
+        <transition on="submitCancel" to="cancel" bind="false" />
+        <transition on-exception="java.lang.Exception" to="exception"/>
+    </global-transitions>
+</flow>

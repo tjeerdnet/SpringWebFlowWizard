@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="net.tjeerd.springwebflowwizard">
+        <!-- level info logs -->
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender"/>
+    </logger>
+
+    <logger name="log4j.logger.net.sf.hibernate.type">
+        <!-- level info logs -->
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender"/>
+    </logger>
+
+    <logger name="log4j.category.org.springframework.webflow">
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender"/>
+    </logger>
+
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender" />
+    </root>
+</log4j:configuration>

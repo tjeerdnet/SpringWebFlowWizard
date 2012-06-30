@@ -1,0 +1,8 @@
+<decorators defaultdir="/WEB-INF/decorators">
+    <decorator name="wizard" page="main.jsp">
+        <pattern>/WEB-INF/flows/views/*</pattern>
+    </decorator>
+    <decorator name="main" page="main.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>
