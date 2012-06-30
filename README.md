@@ -28,4 +28,4 @@ this wizard online I can help other people out there to get started.
 ## About me
 
 My background since a few years is mostly Java oriented (Swing, Spring, Hibernate) and in my previous job (and now for hobby)
-I also develop(ed) in the Grails framework.
+I also develop(ed) in the Grails framework. My personal site can be found at http://www.tjeerd.net.
