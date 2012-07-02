@@ -28,7 +28,8 @@ next section.
 ### Scope session variables
 To use class objects to hold information inside the webflow you can define your variables on top, in the example flow
 XML file you will find:
-  <var name="person" class="net.tjeerd.springwebflowwizard.model.Person"/>
+
+    <var name="person" class="net.tjeerd.springwebflowwizard.model.Person"/>
 
 This means that the variable will be put in the session scope, so anywhere in your flow view you can access this variable
  by using ${person} in your JSP page.
