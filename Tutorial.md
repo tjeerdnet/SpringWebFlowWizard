@@ -78,19 +78,19 @@ at the top of a step page:
 
 To create a minimal wizard form for the first step:
 
-<wizard:wizardform previous="false" modelAttribute="person">
-<table>
-    <tbody>
-        <tr>
-            <td>
-                <label for="name"><spring:message code="person.name"/></label></td>
-            <td>
-                <form:input path="name" id="name" cssErrorClass="validationErrorField" />
-            </td
-        </tr>
-    </tbody>
-</table>
-</wizard:wizardform>
+    <wizard:wizardform previous="false" modelAttribute="person">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="name"><spring:message code="person.name"/></label></td>
+                    <td>
+                        <form:input path="name" id="name" cssErrorClass="validationErrorField" />
+                </td
+            </tr>
+            </tbody>
+        </table>
+    </wizard:wizardform>
 
 The follow attributes are available:
 
