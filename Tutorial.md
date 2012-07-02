@@ -97,5 +97,36 @@ The follow attributes are available:
 * previous (boolean, true shows the previous button)
 * next (boolean, true shows the next button)
 * finish (boolean, true shows the finish button)
+* action (string, custom action state to run)
 * modelAttribute (object containing the model, just like normal Spring forms)
 * showValidationErrors (boolean, true shows the validation errors)
+
+### Custom form action/transition
+Sometimes you want to run a specific action inside a view state, you should then define the "action" attribute
+inside the form wizard tag:
+
+    <wizard:wizardform modelAttribute="person" action="myCustomAction">
+        ...
+    </wizard:wizardform>
+
+In your webflow XML file you can handle the custom action:
+
+    <view-state id="somestep" view="views/somestep.jsp" model="object">
+        <attribute name="description" value="Some step"/>
+        <transition on="myCustomAction" to="myCustomStep"/>
+        <transition on="submitNext" to="nextstep"/>
+        <transition on="submitPrevious" to="previousstep"/>
+    </view-state>
+
+    <view-state id="myCustomStep" view="/views/myCustomView.jsp" model="object">
+        <attribute name="description" value="My custom step"/>
+        <transition on="submitNext" to="anotherstep"/>
+        <transition on="submitPrevious" to="anotherpreviousstep"/>
+    </view-state>
+
+Then you need to introduce a new button which is associated with this action, which actually calls the wizard form which
+now has the name "myCustomAction":
+
+    <a href="javascript:void(0)" onClick="document.myCustomAction.submit()"
+        title="<spring:message code="wizard.label.customaction" />">
+    <span><spring:message code="wizard.label.customaction" /></span></a>
