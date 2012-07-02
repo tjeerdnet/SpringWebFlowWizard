@@ -8,8 +8,7 @@
 <%@ attribute name="previous" required="false" type="java.lang.Boolean" %>
 <%@ attribute name="next" required="false" type="java.lang.Boolean" %>
 <%@ attribute name="finish" required="false" type="java.lang.Boolean" %>
-<%@ attribute name="requiredfields" required="false" type="java.lang.String" %>
-<%@ attribute name="showvalidationerrors" required="false" type="java.lang.Boolean" %>
+<%@ attribute name="showValidationErrors" required="false" type="java.lang.Boolean" %>
 
 <head>
 	<script type="text/javascript">
@@ -46,7 +45,7 @@
 
 <form:form id="${formId}" name="${formId}" modelAttribute="${modelAttribute}">
 
-	<c:if test="${empty showvalidationerrors}">
+	<c:if test="${empty showValidationErrors}">
 
 		<spring:hasBindErrors name="${modelAttribute}">
 			<c:if test="${modelAttribute != null}">

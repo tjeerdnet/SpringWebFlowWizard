@@ -1,6 +1,6 @@
-# Spring WebFlow Wizard tutorial
+# Spring WebFlow Wizard project folder structure
 
-This tutorial explains more on how to use the Spring WebFlow Wizard.
+This document describes the project folder structure.
 
 ## Project package structure
 
