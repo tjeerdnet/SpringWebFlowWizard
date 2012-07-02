@@ -109,7 +109,7 @@ inside the form wizard tag:
         ...
     </wizard:wizardform>
 
-In your webflow XML file you can handle the custom action:
+In your webflow XML file you can handle the custom action as a transition:
 
     <view-state id="somestep" view="views/somestep.jsp" model="object">
         <attribute name="description" value="Some step"/>
